@@ -31,10 +31,8 @@
         "redux": "^5.0.1",
         "sass": "^1.69.5",
         "slick-carousel": "^1.8.1",
-        "web-vitals": "^2.1.4"
-    },
-    "overrides": {
-        "@svgr/webpack": "$@svgr/webpack"
+        "web-vitals": "^2.1.4",
+        "@svgr/webpack": "^8.0.1"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -52,6 +50,7 @@
         "production": [
             ">0.2%",
             "not dead",
+            "not ie <= 11",
             "not op_mini all"
         ],
         "development": [
