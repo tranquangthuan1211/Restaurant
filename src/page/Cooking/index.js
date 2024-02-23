@@ -3,7 +3,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import Header from '../../component/Header/index';
 import "./styles.css"
 
-export default function ({ cart, addToCart, moveTocart }) {
+export default function ({ cart, moveTocart }) {
   const [meals, setMeal] = useState([]) 
   const api = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
   useEffect(() => {
