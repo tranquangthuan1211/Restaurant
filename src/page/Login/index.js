@@ -6,8 +6,8 @@ import { MdError } from "react-icons/md";
 import { FiEye } from "react-icons/fi";
 import { FiEyeOff } from "react-icons/fi";
 import { FcGoogle } from "react-icons/fc";
-// import {auth, provider} from "./configGG.js"
-// import {signInWithPopup} from "firebase/auth"
+import {auth, provider} from "./configGG.js"
+import {signInWithPopup} from "firebase/auth"
 
 
 export default function Login() {
@@ -17,19 +17,19 @@ export default function Login() {
     const [errorMail,setErrorMail] = useState(false);
     const [errorPass, setErrorPass] = useState(false);
     const [eyePass, setEyePass] = useState(false)
-  //   const handleLoginGG = async () => {
-  //     try {
-  //         const result = await signInWithPopup(auth, provider);
-  //         const user = result._tokenResponse;
-  //         Cookies.set("userId", user.idToken,{ expires: 1 })
-  //         Cookies.set("Name", user.displayName,{ expires: 1 })
-  //         console.log(result)
-  //         navigate('/')
-  //     } catch (error) {
-  //         console.error('Error signing in with Google:', error);
-  //         alert("error email")
-  //     }
-  // };
+    const handleLoginGG = async () => {
+      try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result._tokenResponse;
+          Cookies.set("userId", user.idToken,{ expires: 1 })
+          Cookies.set("Name", user.displayName,{ expires: 1 })
+          console.log(result)
+          navigate('/')
+      } catch (error) {
+          console.error('Error signing in with Google:', error);
+          alert("error email")
+      }
+  };
 
     const handleLogin = async () => {
       try {
@@ -108,7 +108,7 @@ export default function Login() {
                 <button style={{margin:"0 4px"}} className='button' onClick={() => handleLogin()}  >Log in</button>
                 <button className='button'><a href='/register' style={{color:"#000"}}>Register</a></button>
             </div> 
-            <div className='login_gg' >
+            <div className='login_gg' onClick={() => handleLoginGG()}>
               <FcGoogle style={{width:"30px", height:'30px'}}/>
               <p style={{fontSize:"2rem", color:"#000"}}>Login with google</p>
             </div> 
