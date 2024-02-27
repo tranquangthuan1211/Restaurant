@@ -213,7 +213,7 @@ export default function Header(props) {
                                 <img src={product.strMealThumb} alt="food" className="image_food" />
                                 <div>
                                     <h1 style={{color:"#000"}} className="name_product">{product.strMeal}</h1>
-                                    <p style={{color:"#000"}}>120.000đ</p>
+                                    <p style={{color:"#000"}}>{product.price}</p>
                                 </div>
 
                                 <IoMdClose
@@ -223,7 +223,7 @@ export default function Header(props) {
                             </div>
                         ))}
                         <div className="bill">
-                            <h1>Total: </h1>
+                            <h1>Total:{props.total} </h1>
                         </div>
                     </div>
                 ) : null}

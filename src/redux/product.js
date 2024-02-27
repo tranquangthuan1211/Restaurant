@@ -7,10 +7,12 @@ const product = createSlice({
     },
     reducers: {
         addToCart(state, action) {
-            console.log(action.payload);
             state.products.push(action.payload);
+            state.total += action.payload.price
+            console.log(state.total)
         },
         moveTocart(state, action) {
+            state.total -= state.products[action.payload].price
             state.products.splice(action.payload, 1);
         },
     },

@@ -10,22 +10,23 @@ import { IoSend } from 'react-icons/io5';
 import Cookies from 'js-cookie';
 import Header from '../../component/Header';
 
-export default function Home({ cart, addToCart, moveTocart }) {
+export default function Home({ cart,total, addToCart, moveTocart }) {
     const [displayMessage, setDisplayMessage] = useState(false);
 
     const handleDisplay = () => {
         setDisplayMessage(!displayMessage);
     };
-    const addTocart = (product) => {
+    const addTocart = async (product) => {
         if(Cookies.get("userId") !== undefined) {
-            addToCart(product);
+            //console.log(newproduct)
+            await addToCart({...product, price:Math.floor(Math.random() * 1000000)});
         }else {
             alert("please login to add food !!!")
         }
     }
     return (
         <div className="content_home">
-            <Header cart={cart} moveTocart={moveTocart} />
+            <Header cart={cart} moveTocart={moveTocart} total = {total}/>
             <div className="header">
                 <h1 className='title' style={{ fontSize: '8rem', color: '#fff' }}>FRESH FOOD </h1>
                 <h1 className='title' style={{ fontSize: '8rem', color: '#fff' }}>IN THE MORNING</h1>

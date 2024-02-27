@@ -4,6 +4,7 @@ import { addToCart, moveTocart } from '../redux/product';
 
 const mapStateToProps = (state) => ({
     cart: state.cart.products,
+    total:state.cart.total
 });
 const mapDispatchToProps = {
     addToCart,
