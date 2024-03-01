@@ -36,7 +36,7 @@ export default function DetailCooking({ cart, addToCart, moveTocart }) {
         </div>
         <div>
           <h1>{meal.strCategory}</h1>
-          <p ><h1>Describe: </h1>{meal.strInstructions}</p>
+          <p className='detailMeal' ><h1>Describe: </h1>{meal.strInstructions}</p>
           <p style={{display:'flex',}}><h1 style={{lineHeight:'16px'}}>Area: </h1>{meal.strArea}</p>
         </div>
       </div>

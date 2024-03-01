@@ -48,6 +48,7 @@ export default function Row(props) {
                                     width: '60px',
                                     color: '#ffff',
                                 }}
+                                onClick={() => props.handlePay(true)}
                             >
                                 Buy
                             </button>

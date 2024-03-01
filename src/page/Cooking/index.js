@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaAngleDoubleRight } from "react-icons/fa";
 import Header from '../../component/Header/index';
 import "./styles.css"
+import Footer from '../../component/footer';
 
 export default function Cooking({ cart, moveTocart }) {
     const [meals, setMeal] = useState([]) 
@@ -40,6 +41,7 @@ export default function Cooking({ cart, moveTocart }) {
           </div>
         ))}
       </div> 
+      <Footer/>
     </div>
   )
 }

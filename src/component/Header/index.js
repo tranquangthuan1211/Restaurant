@@ -8,7 +8,6 @@ import { FaUserCircle } from 'react-icons/fa';
 import {useNavigate} from "react-router-dom"
 import Debounce from '../../Hook/DebounceHook';
 import { FaChevronDown } from "react-icons/fa6";
-
 import './style.css';
 
 export default function Header(props) {
@@ -21,6 +20,10 @@ export default function Header(props) {
     const [resultSearch, setResultSearch] = useState([])
     const [showLogin, setShowLogin] = useState(false)
     const [name, setName] = useState("")
+    const handleShowPay = () => {
+        props.handPay(true)
+        setShowItemCart(false)
+    }
     const handleShowItemCart = () => {
         setShowItemCart(!showItemCart);
     };
@@ -72,8 +75,9 @@ export default function Header(props) {
             console.error('Error during login:', error);
           }
     };
+
     return (
-        <div className='content'>
+        <div className='content' >
             <div className="content_header">
                 <Row style={{ width: '100%' }}>
                     <Col span={4}>
@@ -222,7 +226,7 @@ export default function Header(props) {
                                 />
                             </div>
                         ))}
-                        <div className="bill">
+                        <div className="bill" onClick={handleShowPay}>
                             <h1>Total:{props.total} </h1>
                         </div>
                     </div>
@@ -248,6 +252,7 @@ export default function Header(props) {
                     ))}
                 </div>
             ) : null }
+
         </div>
     );
 }
