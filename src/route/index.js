@@ -1,6 +1,6 @@
-import Home from '../binding/cart';
-import Login from '../page/Login';
-import Register from '../page/Register';
+// import Home from '../binding/cart';
+// import Login from '../page/Login';
+// import Register from '../page/Register';
 import Cooking from '../binding/cartCooking'
 import DetailCooking from '../binding/DetailCooking';
 const publicRoute = [
