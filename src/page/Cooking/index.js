@@ -4,7 +4,7 @@ import Header from '../../component/Header/index';
 import "./styles.css"
 // import Footer from '../../component/footer';
 
-export default function Cooking({ cart, moveTocart }) {
+export default function Cooking({ cart,addToCart, moveTocart }) {
     const [meals, setMeal] = useState([]) 
   const api = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
   useEffect(() => {
