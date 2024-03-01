@@ -27,7 +27,7 @@ export default function DetailCooking({ cart, addToCart, moveTocart }) {
   return (
     <div>
       <Header cart={cart} moveTocart={moveTocart}/>
-      * <div className='youtube'>
+       <div className='youtube'>
         <Youtube linkFilm={meal.strYoutube}/>
       </div> 
       <div className='contentYoutube'>

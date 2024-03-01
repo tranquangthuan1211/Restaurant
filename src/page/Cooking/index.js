@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { FaAngleDoubleRight } from "react-icons/fa";
 import Header from '../../component/Header/index';
 import "./styles.css"
-// import Footer from '../../component/footer';
+import Footer from '../../component/footer';
 
 export default function Cooking({ cart,addToCart, moveTocart }) {
-    const [meals, setMeal] = useState([]) 
+  const [meals, setMeal] = useState([]) 
   const api = "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
   useEffect(() => {
     fetch(api)
@@ -41,7 +41,7 @@ export default function Cooking({ cart,addToCart, moveTocart }) {
           </div>
         ))}
       </div> 
-      {/* <Footer/> */}
+      <Footer/> 
     </div>
   )
 }

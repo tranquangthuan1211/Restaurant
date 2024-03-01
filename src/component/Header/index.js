@@ -233,14 +233,14 @@ export default function Header(props) {
                 ) : null}
             </div>
             <div className='selection'>
-                <h2 className='choose'><a href='/'>Home</a></h2>
-                <h2 className='choose'><a href='/cooking'>Cooking</a></h2>
-                <h2 className='choose'><a href='/review'>Review</a></h2>
+                <h2 className='choose' onClick={() => navigate('/')}>Home</h2>
+                <h2 className='choose' onClick={() => navigate('/cooking')}>Cooking</h2>
+                <h2 className='choose' onClick={() => navigate('/review')}>Review</h2>
             </div>
             {newFood.length > 0 ? (
                 <div className='result_search'>
                     {resultSearch.map((item,index) => (
-                        <a key={index} href={`/cooking/${item.idMeal}`}> 
+                        <div key={index} onClick={() => navigate(`/cooking/${item.idMeal}`)}> 
                             <div className='item' key={index}>
                                 <img src={item.strMealThumb} alt='anh' className='image_item'/>
                                 <div>
@@ -248,7 +248,7 @@ export default function Header(props) {
                                     <p className='address_item' style={{color:"#000"}}>{item.strArea}</p>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     ))}
                 </div>
             ) : null }
