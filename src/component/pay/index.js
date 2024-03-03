@@ -1,12 +1,21 @@
 import React from 'react'
-
-export default function Pay(props) {
-  const Acount_pay = {
-    BANK_ID:"VCB",
-    ACCOUNT_NO:"0977123456"
-  }
-  const QR = `https://img.vietqr.io/image/${Acount_pay.BANK_ID}-${Acount_pay.ACCOUNT_NO}-compact2.png?amount=${props.price}&addInfo="Chuyen tien"&accountName="Tran Quang Thuan"`
+import { FaCheckCircle } from "react-icons/fa";
+import "./styles.css"
+export default function Pay(props) { 
   return (
-    <img style={{width:'400px', height:'400px'}} src={QR} alt='qr chuyen tien'/>
+    <div className='toast'>
+      <div className='toast-content'>
+        <FaCheckCircle className='check' />
+        <div className='message'>
+          <span className='text-1'>success</span>
+          <span className='text-1'>you odered food</span>
+        </div>
+      </div>
+      {props.buy ? (
+        <div className='progress active'></div>
+      ): (
+        <div className='progress'></div>
+      )}
+    </div>
   )
 }

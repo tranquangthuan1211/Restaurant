@@ -186,7 +186,7 @@ export default function Header(props) {
                                 {showOut ? ( 
                                     <div className='out'>
                                         <button className='button_out' onClick={handleLogout}>log out</button>
-                                        <button className='button_out'>setting</button>
+                                        <button className='button_out' onClick={() => navigate("/setting")}>setting</button>
                                     </div>
                                 )
                                 : 

@@ -3,6 +3,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 import Header from '../../component/Header/index';
 import "./styles.css"
 import Footer from '../../component/footer';
+import { useNavigate } from 'react-router-dom';
 
 export default function Cooking({ cart,addToCart, moveTocart }) {
   const [meals, setMeal] = useState([]) 
@@ -13,6 +14,7 @@ export default function Cooking({ cart,addToCart, moveTocart }) {
     .then((res) => setMeal(res.meals))
     .catch((error) => console.log(error))
   },[api])
+  const navigate = useNavigate()
   return (
     <div className='content_cooking'>
       <Header cart={cart} moveTocart={moveTocart}/>
@@ -31,7 +33,7 @@ export default function Cooking({ cart,addToCart, moveTocart }) {
               <div className='button_cooking'>
                 <h1 className='nameMeal'>{meal.strMeal}</h1>
                 <p className='introduce'>{meal.strInstructions}</p>
-                <button className='button' style={{margin:'4px 4px'}}><a  href={`/cooking/${meal.idMeal}`}>Cooking</a></button>
+                <button className='button' style={{margin:'4px 4px'}} onClick={() => navigate(`/cooking/${meal.idMeal}`)}>Cooking</button>
                 <button className='button' style={{margin:'4px 4px'}}>buy</button>
               </div>
             </div>

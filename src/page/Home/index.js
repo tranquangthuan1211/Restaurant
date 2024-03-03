@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 import Row from '../../component/Row';
 import request from '../../component/request';
 import Cookies from 'js-cookie';
 import Header from '../../component/Header';
 import Pay from '../../component/pay';
-import { IoIosCloseCircleOutline } from "react-icons/io";
 import Footer from '../../component/footer';
 
 export default function Home({ cart,total, addToCart, moveTocart }) {
@@ -14,7 +13,11 @@ export default function Home({ cart,total, addToCart, moveTocart }) {
     const handShowPay = (value) => {
         setShowPay(value)
     }
-
+    useEffect(() => {
+        setTimeout(() => {
+            setShowPay(false)
+        },5000)
+    },[showPay])
     const addTocart = async (product) => {
         if(Cookies.get("userId") !== undefined) {
             //console.log(newproduct)
@@ -48,8 +51,7 @@ export default function Home({ cart,total, addToCart, moveTocart }) {
             <Footer/>
             {showPay ? (
                 <div className = "pay">
-                    <IoIosCloseCircleOutline onClick={() => setShowPay(!showPay)} style={{position: "absolute",height: "30px",width: "30px"}} />
-                    <Pay price = {total}/>
+                    <Pay buy = {showPay}/>
                 </div>
             ): null}
         </div>

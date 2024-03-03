@@ -1,0 +1,40 @@
+.setting {
+    display:flex;
+    justify-content:center;
+    height:700px;
+    align-items:center;
+}
+.content-setting {
+    display:flex;
+    width: 700px;
+    padding: 10px 6px 4px 6px;
+    border: solid 1px #fff;
+    background-color: rgba(255, 255, 255,0.4);
+    border-radius: 6px;
+    text-align: center;
+
+}
+.center_setting {
+    border-bottom:1px solid #ccc;
+    padding-bottom:4px
+}
+.name_setting:hover {
+    opacity:0.5
+}
+.infor_setting {
+    margin:4px 0
+}
+.menu_setting {
+    text-align:center;
+    padding:0 10px
+}
+.content_changePass {
+    border-left:1px solid #ccc;
+    height:100%;
+    padding:0 10px
+}
+.icon_close {
+    width:20px;
+    height:20px;
+    color:#ea0a0a
+}
